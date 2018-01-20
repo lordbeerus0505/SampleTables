@@ -91,11 +91,12 @@ public class Conditionals {
         List<String> great = Files.readAllLines(Paths.get("Greater.txt"));
         List<String> less = Files.readAllLines(Paths.get("Lesser.txt"));
         List<String> equal = Files.readAllLines(Paths.get("Equals.txt"));
+        List<String> not = Files.readAllLines(Paths.get("Not.txt"));
         for (String inp : parts) {
             if (inp.equalsIgnoreCase("than") || inp.equalsIgnoreCase("or") || inp.equalsIgnoreCase("to")) {
                 //skip all meaningless word in the relation part
                 continue;
-            } else if (inp.equalsIgnoreCase("not")) {
+            } else if (not.containsAll(Collections.singleton(inp))) {
                 //if inp is not then ! Similarly to all other cases
                 value += '!' + " ";
             } else if (great.containsAll(Collections.singleton(inp))) {
@@ -132,8 +133,8 @@ public class Conditionals {
         String arr1[] = {"200"};
         map.put("Cost", arr1);
         //System.out.print((map)+"The mapis\n\n");
-        data.put("100", "equitable to ");//make sure of the spacings-means greater than 100
-        data.put("200", "insignificantly similar ");
+        data.put("100", "without ");//make sure of the spacings-means greater than 100
+        data.put("200", " below ");
         //System.out.print((data)+"The mapis\n\n");
         String[] condition = {"none"};
         //work on condition which are the relations which are there in sentence
