@@ -20,5 +20,5 @@ trivial
 unimportant
 infinitesimal
 nonessential
+insignificantly smaller
 insignificant
-insignificantly

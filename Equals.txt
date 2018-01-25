@@ -7,6 +7,8 @@ matching
 look-alike
 same
 alike
+around
+in
 homologous
 indistinguishable
 identic
@@ -39,4 +41,5 @@ near
 reachable
 equitable
 plain
+insignificantly similar
 similar
