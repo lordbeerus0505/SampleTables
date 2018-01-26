@@ -46,7 +46,7 @@ public class POSTaggerExample
         
         try {           
         	
-        	String sentence = "get customers of canada and australia";
+        	String sentence = "get Customers of management or technical";
             tokenModelIn = new FileInputStream("en-token.bin");
             TokenizerModel tokenModel = new TokenizerModel(tokenModelIn);
             Tokenizer tokenizer = new TokenizerME(tokenModel);
@@ -161,7 +161,7 @@ public class POSTaggerExample
         }
         System.out.println(sentence);
         Select sc=new Select();
-        sc.call(sentence);
+        //sc.call(sentence);
 
        
         

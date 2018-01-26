@@ -3,6 +3,7 @@ show
 get
 find
 give
+tell
 acquire
 reveal
 display

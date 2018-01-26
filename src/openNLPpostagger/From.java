@@ -8,15 +8,17 @@ import java.util.Collections;
 import java.util.List;
 
 public class From {
-    public  String From(String s) {
+    public static String from(String s) {
         if (s.isEmpty())
             return "";
 
         return "FROM "+s;
     }
 
-    public void caller(String s1) throws IOException {
-       String s = s1;
+    public static void main(String[] args) throws IOException {
+       String s1="get all the customers t_table" +
+               " who are in c_management and c_technical";
+        String s = s1;
        //System.out.println("The string entered is "+s);
         //String c="c_sales";
         List<String> l1 = Files.readAllLines(Paths.get("From.txt"));
@@ -54,7 +56,7 @@ public class From {
         {
             //System.out.println(t+"Test");
             if(l1.containsAll(Collections.singleton(t)))
-            { s2=From(col1);
+            { s2=from(col1);
                 //System.out.println("Hello"+s);
 
                 break;

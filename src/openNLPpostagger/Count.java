@@ -16,7 +16,8 @@ public class Count {
     }
     public static void main(String[] args) throws IOException{
 
-        String s = "count the number of c_productid";
+        String s1 = " type of c_productid and t_pokemon";
+        String s=s1;
         //String c="c_sales";
         List<String> l = Files.readAllLines(Paths.get("Count.txt"));
         List<String> list=new ArrayList<String>();
@@ -34,7 +35,7 @@ public class Count {
             }
         }
 
-        System.out.println(col1);
+        //System.out.println(col1);
         //System.out.println(list);
 
         for (String t:list)
@@ -42,6 +43,8 @@ public class Count {
             if(l.containsAll(Collections.singleton(t)))
             {s=Count(col1);
                 break;}
+             else
+                 s="";
 
         }
         System.out.println(s);

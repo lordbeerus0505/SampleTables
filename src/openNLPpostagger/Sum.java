@@ -8,7 +8,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class Sum {
-    String Sum(String c) {
+    static String sum(String c) {
         //System.out.println("Inside Sum");
         /*
             Finding the sum of all elements in the column c_sales
@@ -16,7 +16,8 @@ public class Sum {
         return "SUM("+c+")";
     }
 
-    void addition(String s1) throws IOException {
+    public static void main(String [] args) throws IOException {
+        String s1= "Average of total c_sales";
         String s = s1;//" number of c_sales";
         //String c="c_sales";
         List<String> l = Files.readAllLines(Paths.get("Sum.txt"));
@@ -42,7 +43,7 @@ public class Sum {
         for (String t:list)
         {
             if(l.containsAll(Collections.singleton(t))&&count==1)
-            {s=Sum(col1);
+            {s=sum(col1);
                 break;}
             else
                 s="";

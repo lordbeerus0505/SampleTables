@@ -8,13 +8,14 @@ import java.util.Collections;
 import java.util.List;
 
 public class Average {
-    String Avg(String c)
+    static String avg(String c)
     {    /*
             Finding the average of all elements in the column c_sales
          */
         return "AVG("+c+")";
     }
-    void average(String s1) throws IOException {
+    public static void main(String [] args) throws IOException {
+        String s1="display the average cost of t_cycles";
         String s = s1;
         //String c="c_sales";
         List<String> l = Files.readAllLines(Paths.get("Average.txt"));
@@ -40,7 +41,7 @@ public class Average {
         for (String t:list)
         {
             if(l.containsAll(Collections.singleton(t))&&count==1)
-            {s=Avg(col1);
+            {s=avg(col1);
                 break;}
              else
                  s="";

@@ -9,7 +9,7 @@ public class NLP {
 	static HashMap<String,ArrayList<String>>m;
 	
     public static void DisplayQuery(HashMap<String ,ArrayList<String>> map) {
-        ArrayList<String> al1, al2, al3, al4, al5 = new ArrayList<String>();
+        ArrayList<String> al1, al2, al3, al4, al5 ,al6 = new ArrayList<String>();
 
         al1 = map.get("customers");
         System.out.println("customers contains   " + al1);
@@ -26,6 +26,9 @@ public class NLP {
         al5 = map.get("sales");
         System.out.println("sales contains   " + al5);
 
+        al6 = map.get("products");
+        System.out.println("products contain   "+al6);
+
 
      }
         public static void databasecreate()
@@ -36,6 +39,7 @@ public class NLP {
             ArrayList<String> al3 = new ArrayList<String>();
             ArrayList<String> al4 = new ArrayList<String>();
             ArrayList<String> al5 = new ArrayList<String>();
+            ArrayList<String> al6=new ArrayList<String>();
 
         String cust[]=new String[]{"management","technical","marketing","accounting","sales"};
         al1.addAll(Arrays.asList(cust));
@@ -58,6 +62,10 @@ public class NLP {
         String sales[]=new String[]{"$100,000", "$100,250", "$100,500", "$100,750", "$200,000", "$200,250", "$200,500", "$200,750", "$300,000"};
         al5.addAll(Arrays.asList(sales));
         m.put("sales",al5);
+
+        String products[]=new String[] {"mountain bikes","playing cards","tire tube","helmet"};
+            al6.addAll(Arrays.asList(sales));
+            m.put("products",al6);
 
      //   DisplayQuery(m);
 
