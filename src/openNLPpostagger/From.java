@@ -9,6 +9,8 @@ import java.util.List;
 
 public class From {
     public  String From(String s) {
+        if (s.isEmpty())
+            return "";
 
         return "FROM "+s;
     }
@@ -40,26 +42,26 @@ public class From {
         {
             if(col[i].contains("t_"))
             {
-                col1=""+col[i];
+                col1=""+col[i];//As of now col1 is a single string or single table
                 break;
             }
         }
 
         //System.out.println(col1);
         //System.out.println(list);
-
+        String s2="";
         for (String t:list1)
         {
             //System.out.println(t+"Test");
             if(l1.containsAll(Collections.singleton(t)))
-            {s=From(col1);
+            { s2=From(col1);
                 //System.out.println("Hello"+s);
 
                 break;
             }
 
         }
-        System.out.println(s);
+        System.out.println(s2);
 
     }
 }

@@ -10,6 +10,8 @@ import java.util.List;
 public class Select {
     public String Select(String s[]) {
         String s1="";int count=0;
+        if (s[0].equalsIgnoreCase(" "))
+            return "";
         for(int i=0;i<s.length;i++)
         {//System.out.println(s[i]);
             if(s[i]!=null)
@@ -59,9 +61,20 @@ public class Select {
                     col[i]
             }*/
         }
+        for(String t:all) {
+            for (int i = 0; i < col.length; i++) {
+                if (t.contains(col[i])&&count==1) {//all is present
+                    col[i] = "";
+                    count=2;
+                   // col1[0]="";
+                    break;
+                }
+            }
+        }
 
+            col1[0]=" ";
 
-            if (count==0)//c_doesnt exist
+            if (count==2)//c_doesnt exist
             {   col1[0]="*";
                 for(int k=1;k<col1.length;k++)
                     col1[k]=null;
@@ -72,25 +85,18 @@ public class Select {
                 {   col[i]="";
                     break;}
             }*/
-            for(String t:all) {
-                for (int i = 0; i < col.length; i++) {
-                    if (t.contains(col[i])&&count==0) {
-                        col[i] = "";
-                        break;
-                    }
-                }
-            }
+
         //System.out.println(col1);
         //System.out.println(list);
-
+        String s2="";
         for (String t:list)
         {
             if(l.containsAll(Collections.singleton(t)))
-            {s=Select(col1);
+            { s2=Select(col1);
                 break;}
 
         }
-        System.out.print(s+" ");
+        System.out.print(s2+" ");
         From obj=new From();
         obj.caller(s1);
 
