@@ -8,9 +8,26 @@ import java.util.Collections;
 import java.util.List;
 
 public class Select {
-    public String Select(String s) {
+    public String Select(String s[]) {
+        String s1="";int count=0;
+        for(int i=0;i<s.length;i++)
+        {//System.out.println(s[i]);
+            if(s[i]!=null)
+            {
+                if(count==0) {
+                    s1 = s[i];
+                    count++;
+                }
+                else {
+                    s1=s1+","+s[i];
+                }
 
-        return "SELECT "+s;
+            }
+
+
+        }
+
+        return "SELECT "+s1;
     }
 
     public void call(String s) throws IOException {
@@ -19,22 +36,50 @@ public class Select {
         //String c="c_sales";
         List<String> l = Files.readAllLines(Paths.get("Select.txt"));
         List<String> list=new ArrayList<String>();
+        List<String> all= Files.readAllLines(Paths.get("All.txt"));
         for (String w : s.split(" ")) {
             list.add(w.toLowerCase());
 
-        }String col1="";
+        }String col1[]=new String[20];
         String col[]=s.split(" ");
+        int j=0;int count=0;
         for (int i=0;i<col.length;i++)
         {
             if(col[i].contains("c_"))
             {
-                col1=""+col[i];
-                break;
+                col1[j++]=""+col[i];
+                //break;
+                count=1;
             }
-            else if(col[i].contains("all")||col[i].contains("every")||col[i].contains("complete")||col[i].contains("each"))
-                col1="*";
+            /*else if((col[i].contains("all")||col[i].contains("every")||col[i].contains("complete")||col[i].contains("each")))
+                {   if(count==0)
+                {col1[0]="*";
+                break;}
+                else //count==1
+                    col[i]
+            }*/
         }
 
+
+            if (count==0)//c_doesnt exist
+            {   col1[0]="*";
+                for(int k=1;k<col1.length;k++)
+                    col1[k]=null;
+            }
+            /*for (int i=0;i<col.length;i++){
+
+             if((col[i].contains("all")||col[i].contains("every")||col[i].contains("complete")||col[i].contains("each"))&&count==0)
+                {   col[i]="";
+                    break;}
+            }*/
+            for(String t:all) {
+                for (int i = 0; i < col.length; i++) {
+                    if (t.contains(col[i])&&count==0) {
+                        col[i] = "";
+                        break;
+                    }
+                }
+            }
         //System.out.println(col1);
         //System.out.println(list);
 

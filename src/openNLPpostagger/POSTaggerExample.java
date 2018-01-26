@@ -46,7 +46,7 @@ public class POSTaggerExample
         
         try {           
         	
-        	String sentence = "get all the customers who are in managemet or technica";
+        	String sentence = "give full names of all customers";
             tokenModelIn = new FileInputStream("en-token.bin");
             TokenizerModel tokenModel = new TokenizerModel(tokenModelIn);
             Tokenizer tokenizer = new TokenizerME(tokenModel);
